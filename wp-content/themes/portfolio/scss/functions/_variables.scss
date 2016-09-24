@@ -1,0 +1,39 @@
+/*--------------------------------------------------------------
+# Colors
+--------------------------------------------------------------*/
+$red: #A68D6D;//#D46A6A;
+$darkPrime: darken( $red, 30% );
+//http://paletton.com/palette.php?uid=10G0u0ka%2BkQ4AuB7Spbdkgajfdj
+$headerFont:'Telex', sans-serif; 
+$bodyFont:'Georgia', serif;
+$menucolor:#000;
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+$max-width: 1200px;
+$sidePad:25px;
+
+
+$smallScreen: 640px;
+$mediumScreen: 768px;
+$largeScreen: 960px;
+$ex-largeScreen: 1200px;
+$fullWidth: 1600px;
+
+$mobile: new-breakpoint(min-width $smallScreen);
+$mobileDown:new-breakpoint(max-width $smallScreen);
+
+$tablet: new-breakpoint(min-width $mediumScreen);
+$tabletDown:new-breakpoint(max-width $mediumScreen);
+
+$desktop: new-breakpoint(min-width $largeScreen);
+$desktopDown:new-breakpoint(max-width $largeScreen);
+
+$ex-desktop: new-breakpoint(min-width $ex-largeScreen);
+$ex-desktopDown:new-breakpoint(max-width $ex-largeScreen);
+
+
+
+
+
