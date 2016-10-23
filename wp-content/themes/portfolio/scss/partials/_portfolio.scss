@@ -1,0 +1,25 @@
+/*-----------------------------------------
+# 
+# Portfolio Page
+#
+------------------------------------------*/
+
+.page-template-portfoliopage{
+	
+}
+
+#portfolio{
+	@include outer-container;  
+
+	.portfolio-item{
+		@include span-columns(3);
+		background: $red;
+		text-align: center;
+		margin-bottom:20px;
+		&:nth-child(4n){
+			@include omega();
+		} 
+		
+		
+	}
+}

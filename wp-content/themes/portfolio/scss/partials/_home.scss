@@ -3,7 +3,7 @@
 # Homepage Stylings
 #
 ------------------------------------------*/
-
+  
 .home{
 	
 	.site-header{
@@ -92,7 +92,6 @@
 
 		ul{
 			@include fill-parent();
-			@include row(table);
 			margin: 0 auto;
 			padding: 0;
 			position: static;
@@ -137,11 +136,6 @@
 
 
 			&:hover{
-				//box-shadow: inset 0 0px 25px 20px rgba(255,255,255,.1); 
-				/*background: $red;*/
-				/*color:#000;*/
-				/*border-color:darken( $red, 50% );*/
-
 				svg{
 					fill:$red;
 				}

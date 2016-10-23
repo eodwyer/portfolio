@@ -23,6 +23,34 @@
 				'after'  => '</div>',
 			) );
 		?>
+
+		<!-- Resume -->
+		<?php if(have_rows('resume_section')): ?>
+		
+			<div class='resume-wrap'>
+				<?php while(have_rows('resume_section')): the_row(); ?>
+					<div class='res-block'>
+						<h2><?php the_sub_field('section_title');?></h2>
+
+						<div class='res-block-content'>
+							<?php the_sub_field('section_content');?>
+						</div>
+
+						<div class='res-items'>
+							<?php if(have_rows('resume_items')):?> 
+								<?php while(have_rows('resume_items')): the_row(); ?>
+									<h3><?php the_sub_field('title');?></h3>
+									<div class='date'><?php the_sub_field('date');?></div>
+									<div class='res-item-description'>
+										<?php the_sub_field('description');?>
+									</div>
+								<?php endwhile; ?>
+							<?php endif; ?>
+						</div>
+					</div>
+				<?php endwhile; ?>
+			</div>
+		<?php endif; ?>
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>

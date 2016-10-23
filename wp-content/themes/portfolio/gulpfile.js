@@ -51,7 +51,7 @@ Watch tasks
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "http://localhost:8888/newportfolio/"
+        proxy: "http://localhost:8888/portfolio/"
     });
 });
 
