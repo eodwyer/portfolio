@@ -1,0 +1,37 @@
+/*---------------------------------------
+# 
+# Blog
+#
+------------------------------------------*/
+
+.blog{
+	.site-content{
+		background: none; 
+	}
+
+	.post{
+		background: #fff;
+		padding:20px;
+		margin-bottom: 20px; 
+/*		position: relative;
+*/		/*transform: rotate(45deg);
+
+		.article-inner{
+			transform: rotate(-45deg);
+			max-width: 50%;
+		}*/
+
+		/*&:after{
+			content:'';
+			display: block;
+			width:150vw;
+			height: 120%;
+			position: absolute;
+			top:0vw;
+			left:0;
+			z-index: -1;
+			background: #fff;
+			transform: rotate(45deg);
+		}*/
+	}
+}

@@ -49,28 +49,6 @@ body{
     	top:0;
     }
 
-
-    &.header-fixed{
-    	position: fixed;
-    	top: 0px;
-	    left: 0;
-	    padding:0;
-	    width: 100%;
-	  	@include media($mobileDown){
-	  		background: none;
-	  		border:none;
-	  	}
-    	@include media($mobile){
-    		left:50%;
-    		margin-left: -50%;
-    		
-    	}
-	   
-	    .site-branding{
-	    	max-height: 0;
-	    }
-    }
-
     .site-branding{
     	max-height: 500px;
     	overflow: hidden;
@@ -164,13 +142,6 @@ body{
 	}
 }
 
-
-
-
-
-
-
-
 /*-------------------------------------
 # Menu Button
 ---------------------------------------*/
@@ -195,9 +166,9 @@ body{
     transition:all 1s;
 	z-index: 20;
 
-	@include media($mobile){
+	/*@include media($mobile){
 		display: none;  
-	}
+	}*/
 
 		
 	&:before, 
@@ -233,7 +204,7 @@ body{
 
 
 
-.headroom--pinned.header-fixed{
+/*.headroom--pinned.header-fixed{
 	.menu-toggle{
 		opacity:1;
    		transition:opacity .5s;
@@ -245,7 +216,7 @@ body{
 	.menu-toggle{
     	opacity: 0;
     }
-}
+}*/
 
 /*---------------------------------------
 # Primary Menu
@@ -348,8 +319,84 @@ body{
 	}
 }
 
-.header-fixed{
-	background-color:#000;
+/*********************
+Sticky Menu
+*********************/
+
+.menu-toggle{
+	top:50vh;
+}
+
+.site-header.header-fixed{
+	position: fixed;
+	top: 0px;
+    left: 0;
+    padding:0;
+    width:0;
+    background: none;
+
+  	@include media($mobileDown){
+  		background: none;
+  		border:none;
+  	}
+	@include media($mobile){
+		left:50%;
+		margin-left: -50%;	
+	}
+   
+    .site-branding{
+    	max-height: 0;
+    }
+
+	 #site-navigation{
+	 	margin: 0;
+	 	background: none;
+
+	 	
+
+	 	#primary-menu{
+	 		display: inline;
+	 	}
+
+    	li{
+    		float:none;
+    		display: block;
+    		width:0px;
+    		overflow: hidden;
+    		background: #000;
+    		position: absolute;
+    		left:0;
+    		top:50vh;
+    		transform: rotate(45deg);
+    		transition:all .25s;
+
+    		a{
+    			min-width: 200px;
+    		}
+    	}
+
+    	&.toggled{
+	 		li{
+	 			width:100vw;
+	 			left:0vw;
+	 			height: 60px;
+	 			transform: rotate(0deg);
+
+	 			&:nth-child(1){
+	 				top:calc(50vh - 120px);
+	 			}
+	 			&:nth-child(2){
+	 				top:calc(50vh - 60px);
+	 			}
+	 			&:nth-child(3){
+	 				top:calc(50vh + 60px);
+	 			}
+	 			&:nth-child(4){
+	 				top:calc(50vh + 120px);
+	 			}
+	 		}
+	 	}
+    }
 }
 
 
@@ -361,9 +408,6 @@ body{
 
 .site-content{
 	background:#fff;
-	/*@include media($mobileDown){
-		padding-top:20px !important;
-	}*/
 }
 
 #primary{
@@ -371,7 +415,7 @@ body{
 	@include media($mobile){
 		
 	}
-	.entry-content{
+	.site-main{
 		max-width: 800px;
 		margin:0 auto;
 	}
@@ -433,6 +477,7 @@ body{
 # Footer
 ------------------------------------------*/
 .site-footer{
+	max-width: none;
     color:#fff;
     @include outer-container;
 	clear:both;
@@ -442,11 +487,7 @@ body{
     background:rgba(0,0,0,.5);
 }
 
-#secondary{
-	@include media($tablet){
-		@include span-columns(4);
-	}
-}
+
 
 
 
