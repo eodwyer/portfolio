@@ -248,6 +248,10 @@ body{
 		width:100%;
 		background: #000;
 		padding-top:75px;
+
+		&:hover{
+	 			background-color:$red;
+	 		}
 	}
 
 	&[aria-expanded=true]{
@@ -324,7 +328,8 @@ Sticky Menu
 *********************/
 
 .menu-toggle{
-	top:50vh;
+	top:300px;
+	margin-top:-40px;
 }
 
 .site-header.header-fixed{
@@ -332,7 +337,6 @@ Sticky Menu
 	top: 0px;
     left: 0;
     padding:0;
-    width:0;
     background: none;
 
   	@include media($mobileDown){
@@ -361,39 +365,93 @@ Sticky Menu
     	li{
     		float:none;
     		display: block;
-    		width:0px;
     		overflow: hidden;
     		background: #000;
+    		border:none;
+    		border-bottom:1px solid #fff;
     		position: absolute;
-    		left:0;
-    		top:50vh;
-    		transform: rotate(45deg);
-    		transition:all .25s;
+    		left:-100vw;
+    		top:320px;
+    		margin-top:-18px;
+
+
+			@include transition(left 1s, top .5s);
+
+    		&:nth-child(1){
+ 				transform: rotate(-30deg);
+ 				z-index: 5;
+ 			}
+ 			&:nth-child(2){
+ 				transform: rotate(-15deg);
+ 				z-index: 4;
+ 			}
+ 			&:nth-child(3){
+ 				transform:rotate(5deg);
+ 				z-index: 3;
+ 			}
+ 			&:nth-child(4){
+ 				transform: rotate(15deg);
+ 				z-index: 2;
+ 			}
+ 			&:nth-child(5){
+ 				transform: rotate(30deg);
+ 				z-index: 1;
+ 			}
+
 
     		a{
-    			min-width: 200px;
+    			height: 100%;
+    			line-height: 90px;
+    			border:none;
+    			transform: rotate(-5deg);
     		}
     	}
 
+    	.menu-main-menu-container{
+    		transition:width .5s;
+    	}
+
     	&.toggled{
+    		.menu-main-menu-container{
+    			background: rgba(0,0,0,1);
+	    		width:600px;
+	    		height:600px;
+	    		border-radius: 0 50% 50% 0;
+	    		overflow: hidden;
+	    		position: relative;
+	    		left:-300px;
+	    	}
+
+    		#primary-menu{
+    			position: relative;
+    			left:50%;
+    			top:0;/*why????? */
+    		}
+
 	 		li{
-	 			width:100vw;
-	 			left:0vw;
-	 			height: 60px;
-	 			transform: rotate(0deg);
+	 			width:300px; 
+	 			left:0px;
+	 			height: 100px;
+	 			line-height: 100px;
 
 	 			&:nth-child(1){
-	 				top:calc(50vh - 120px);
+	 				top:calc(300px - 260px);
 	 			}
 	 			&:nth-child(2){
-	 				top:calc(50vh - 60px);
+	 				top: calc(300px - 150px);
 	 			}
 	 			&:nth-child(3){
-	 				top:calc(50vh + 60px);
+	 				top: calc(235px);
 	 			}
+
 	 			&:nth-child(4){
-	 				top:calc(50vh + 120px);
+	 				top:calc(325px);
 	 			}
+	 			&:nth-child(5){
+	 				top:calc(420px);
+	 			}
+	 			
+	 			
 	 		}
 	 	}
     }
@@ -479,7 +537,6 @@ Sticky Menu
 .site-footer{
 	max-width: none;
     color:#fff;
-    @include outer-container;
 	clear:both;
 	padding-top:20px;
 	padding-bottom:20px;

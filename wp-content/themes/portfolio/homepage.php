@@ -21,6 +21,7 @@ get_header(); ?>
 
 					<div class="entry-content">
 
+
 						<div class='img-clip'>
 							<?php 
 								if(get_field('portrait', 'option')): 
