@@ -6,7 +6,7 @@
 		// initialise
 		headroom.init(); 
 
-		var topofDiv = $(".site-branding").offset().top; //gets offset of header
+		var topofDiv = $("#masthead").offset().top; //gets offset of header
 		var height = $("#masthead").outerHeight();
 
 		$(window).scroll(function(){
