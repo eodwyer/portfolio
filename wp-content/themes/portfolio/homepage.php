@@ -10,6 +10,11 @@
 
 get_header(); ?>
 
+
+	<nav id="home-navigation" class="main-navigation effect-layla" role="navigation">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'walker' => new icon_walker() ) ); ?>
+	</nav><!-- #site-navigation -->
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -40,10 +45,7 @@ get_header(); ?>
 						?>
 					</div><!-- .entry-content -->
 
-					<nav id="home-navigation" class="main-navigation effect-layla" role="navigation">
-						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'walker' => new icon_walker() ) ); ?>
-					</nav><!-- #site-navigation -->
-
+				
 					<?php if ( get_edit_post_link() ) : ?>
 						<footer class="entry-footer">
 							<?php
@@ -61,11 +63,10 @@ get_header(); ?>
 					<?php endif; ?>
 				</article><!-- #post-## -->
 
-				
-
 			<?php endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->
+
 	</div><!-- #primary -->
 
 <?php

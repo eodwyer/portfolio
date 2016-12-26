@@ -206,21 +206,21 @@ body{
 }
 
 
-@include media($mobileDown){
-	.headroom--pinned.header-fixed{
-		.menu-toggle{
-			opacity:1;
-	   		transition:opacity .5s;
-		}
-	  
+
+.headroom--pinned.header-fixed{
+	.menu-toggle{
+		opacity:1;
+   		transition:opacity .5s;
+	}
+  
+}
+
+.headroom--unpinned.header-fixed {
+	.menu-toggle{
+    	opacity: 0;
+    }
 	}
 
-	.headroom--unpinned.header-fixed {
-		.menu-toggle{
-	    	opacity: 0;
-	    }
-	}
-}
 
 
 /*---------------------------------------
@@ -323,9 +323,9 @@ body{
 	}
 }
 
-/*********************
-Sticky Menu
-*********************/
+/*-----------------------------------------
+#Sticky Menu
+---------------------------------------*/
 
 @include media($mobile){
 	.site-header.header-fixed{
@@ -430,9 +430,7 @@ Sticky Menu
 	.site-main{
 		max-width: 800px;
 		margin:0 auto;
-		@include media($desktopDown){
-			padding:0 50px;/*for big dropdown*/
-		}
+		
 		@include media($mobileDown){
 			padding:0;
 		}

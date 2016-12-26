@@ -1,0 +1,17 @@
+# ignore everything in the root except the "wp-content" directory.
+/*
+!wp-content/
+!.gitignore
+
+#wp content stuff
+wp-content/*
+!wp-content/themes/
+!wp-content/plugins/
+
+# ignore specific themes
+wp-content/themes/twenty*/
+
+#gulp stuff
+node_modules/
+.DS_Store
+dist

@@ -13,7 +13,7 @@
 	    max-width: 280px;
 	    max-height: 280px;
 	    padding: 55px 40px;
-	    margin: 20px auto;
+	    margin: 20px auto 45px auto;
 	    display: flex;
   		align-items: center;
   		justify-content: center;
@@ -39,13 +39,18 @@
 	    }
 	}
 
-	#content .section-inner{
-		max-width: none;
+	#content{
+		padding-top:0 !important;
+		
+		.section-inner{
+			max-width: none;
+		}
 	}
+
+
 	#primary{
 		@include span-columns(12);
 		float:none;
-		padding-bottom: 0;
 
 		.site-main{
 			max-width: none;
@@ -87,19 +92,23 @@
     	line-height: 1.65em;
 	}
 
+
+	/*-----------------------------------------
+	# Home Navigation
+	---------------------------------------*/
+
+
 	#home-navigation{
-		clear:both;
-		margin:50px 0 0 0;
 		margin-left:-$sidePad;
 		margin-right:-$sidePad; 
 		background: #000;
 
 		ul{
-			@include fill-parent();
 			margin: 0 auto;
 			padding: 0;
 			position: static;
 			max-width: 1200px;
+			display: block;
 		}
 
 		li:first-child{
@@ -107,9 +116,10 @@
 		}
 
 		li{
-			@include span-columns(6);
+			@include span-columns(6, table);
 			@include media($tablet){
 				@include span-columns(3);
+				
 			}
 			@include media($mobileDown){
 				width:100%;
@@ -120,8 +130,8 @@
 
 		a{
 			display: block;
-			height:200px;
-			line-height: 170px;
+			height:100px;
+			line-height: 70px;
 			background:#000;
 			text-align: center;
 			transition:all .25s;
@@ -170,9 +180,9 @@
 
 
 		span:before {
-			top: 50px;
+			top: 20px;
 			right: 10px;
-			bottom: 50px;
+			bottom: 20px;
 			left: 10px; 
 			border-top: 1px solid $darkPrime;
 			border-bottom: 1px solid $darkPrime;
@@ -183,9 +193,9 @@
 		}
 
 		span:after {
-			top: 30px;
+			top: 10px;
 			right: 30px;
-			bottom: 30px;
+			bottom: 10px;
 			left: 30px;
 			border-right: 1px solid $darkPrime;
 			border-left: 1px solid $darkPrime;
