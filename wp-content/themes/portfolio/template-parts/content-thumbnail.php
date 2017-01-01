@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying post content.
+ * Template part for displaying post thumbnails.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -11,14 +11,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class='article-inner'>
-		
+		<?php
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail();
+			} 
+		?>
 		<header class="entry-header">
-			<a class='blog-back' href='/blog'>&larr; Back to Blog</a>
 			<?php
 			if ( is_single() ) :
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			else :
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				the_title( '<h2 class="entry-title">', '</h2>' );
 			endif;
 
 			if ( 'post' === get_post_type() ) : ?>
@@ -26,18 +29,17 @@
 				<?php portfolio_posted_on(); ?>
 			</div><!-- .entry-meta -->
 			<?php
-				if ( has_post_thumbnail() ) {
-					the_post_thumbnail();
-				} 
-
-				endif; 
-			?>
+			endif; ?>
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
 			<?php
 
-				the_content();
+				the_excerpt( sprintf(
+					/* translators: %s: Name of current post. */
+					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'portfolio' ), array( 'span' => array( 'class' => array() ) ) ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				) );
 
 				wp_link_pages( array(
 					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'portfolio' ),
@@ -45,6 +47,7 @@
 				) );
 			?>
 
+			<a class='readmore' rel="bookmark" href='<?php echo get_permalink(); ?>'>Read More</a>
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">

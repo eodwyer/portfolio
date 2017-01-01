@@ -10,7 +10,6 @@ textarea {
 	font-family: Georgia, serif;
 	font-size: 16px;
 	font-size: 1rem;
-	//font-size:1.5vw;
 	line-height: 1.5;
 }
 
@@ -122,4 +121,32 @@ a{
 
 	
 }
+
+
+/*-------------------------------------
+# Buttons
+--------------------------------------*/
+
+
+.site-main{
+	button, 
+	input[type=button], 
+	input[type=reset], 
+	input[type=submit]{
+		background: $red;
+		color:#fff;
+		font-weight: normal;
+		line-height: 20px;
+	    border: none;
+	    text-shadow: none;
+	    box-shadow: none;
+
+	    &:hover{
+	    	background:$darkPrime;
+	    	box-shadow:none;
+
+	    }
+	}
+}
+
 

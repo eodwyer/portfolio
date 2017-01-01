@@ -34,6 +34,7 @@ body{
 # Header
 ---------------------------------------*/
 .site-header{
+	z-index: 100;
 	background: #000;
 	background-color:rgba(0,0,0,.5);
     transition: top .25s;
@@ -422,7 +423,7 @@ body{
 	background:#fff;
 }
 
-#primary{
+.content-area{
 	padding:25px 0;
 	@include media($mobile){
 		

@@ -20,7 +20,7 @@
 		    else{
 		       $(".site-header, body").removeClass('header-fixed');
 		        $('.site-content').css({
-			       'paddingTop':'10px'
+			       'paddingTop':'0px'
 			    });
 		    }
 		});
@@ -42,6 +42,14 @@
 				window.location.href = theURL;
 			},1000);
 		})
+
+		/*----------------------------------------------
+		# Blog
+		-----------------------------------------------*/
+
+		$('.section-toggle').on('click',function(){
+			$(this).toggleClass('active');
+		});
 
 	});
 })( jQuery );

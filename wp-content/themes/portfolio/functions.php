@@ -161,4 +161,22 @@ if( function_exists('acf_add_options_page') ) {
 	
 }
 
+/**
+* Excerpt
+*
+**/
+function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+function wpdocs_excerpt_more( $more ) {
+    // return sprintf( '...<a class="read-more" href="%1$s">%2$s</a>',
+    //     get_permalink( get_the_ID() ),
+    //     __( 'Read More', 'textdomain' )
+    // );
+    return '...';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
 

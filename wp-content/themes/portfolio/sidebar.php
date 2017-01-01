@@ -13,5 +13,10 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<div class='section-inner'>
+		<h2 class='section-toggle'>Filter Posts</h2>
+		<div class='section-wrap'>
+			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		</div>
+	</div>
 </aside><!-- #secondary -->
