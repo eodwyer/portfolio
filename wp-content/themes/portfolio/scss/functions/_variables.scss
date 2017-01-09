@@ -1,13 +1,23 @@
 /*--------------------------------------------------------------
 # Colors
 --------------------------------------------------------------*/
-$red: #A68D6D;//#D46A6A;
-$darkPrime: darken( $red, 30% );
 //http://paletton.com/palette.php?uid=10G0u0ka%2BkQ4AuB7Spbdkgajfdj
-$headerFont:'Telex', sans-serif; 
-$bodyFont:'Georgia', serif;
+
+
+$red: #A68D6D;//#D46A6A;
+$darkPrime: darken( $red, 20% );
 $menucolor:#000;
 $headerColor:#404040;
+
+
+
+/*--------------------------------------------------------------
+# Fonts
+--------------------------------------------------------------*/
+
+$headerFont:'Telex', sans-serif; 
+$bodyFont:'Georgia', serif;
+
 
 /*--------------------------------------------------------------
 # Layout

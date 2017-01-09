@@ -8,8 +8,8 @@ select,
 textarea {
 	color: #404040;
 	font-family: Georgia, serif;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 18px;
+	font-size: 1.125rem;
 	line-height: 1.5;
 }
 
@@ -129,17 +129,23 @@ a{
 
 
 .site-main{
+	.button,
 	button, 
 	input[type=button], 
 	input[type=reset], 
-	input[type=submit]{
+	input[type=submit],
+	 div.wpforms-container-full .wpforms-form button[type=submit]{
 		background: $red;
 		color:#fff;
 		font-weight: normal;
 		line-height: 20px;
-	    border: none;
+	    //border: 2px solid $darkPrime;
+	    border:none;
+	    text-decoration: none;
 	    text-shadow: none;
 	    box-shadow: none;
+	    padding:15px 20px;
+	    transition:all .25s;
 
 	    &:hover{
 	    	background:$darkPrime;

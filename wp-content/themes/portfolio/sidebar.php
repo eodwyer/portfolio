@@ -14,7 +14,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 <aside id="secondary" class="widget-area" role="complementary">
 	<div class='section-inner'>
-		<h2 class='section-toggle'>Filter Posts</h2>
+		<h2 class='section-toggle'>Search Posts</h2>
 		<div class='section-wrap'>
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
 		</div>

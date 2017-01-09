@@ -23,16 +23,38 @@ get_header(); ?>
 					comments_template();
 				endif;
 			?>
-			<?php if(have_rows('websites')): ?>
+			<?php if(have_rows('websites')): $index=1; ?>
 				<div id='portfolio'>
 					<?php while(have_rows('websites')): the_row(); ?>
-						<div class='portfolio-item'>
-							<h2><?php the_sub_field('title'); ?></h2>
-							<img src='<?php 
+						<div class='portfolio-item modal' tabindex='0'>
+							
+							<img class='thumbnail' src='<?php 
 								$img=get_sub_field('thumbnail'); 
 								echo $img['sizes']['thumbnail'];
 							?>'?>
+							<label class='port-title' for="modal-<?php echo $index; ?>">
+								<div class="modal-trigger">
+									<span><?php the_sub_field('title'); ?></span>
+								</div>
+							</label>
+							
+							<input class="modal-state modal-switch" id="modal-<?php echo $index; ?>" type="checkbox" />
+							<div class="modal-fade-screen">
+							    <div class="modal-inner">
+							      <div class="modal-close" for="modal-1"></div>
+							      <h2><?php the_sub_field('title'); ?></h2>
+							      <a href='<?php the_sub_field('site_url'); ?>' target='_blank'>
+							      	<img src='<?php echo $img['sizes']['large']; ?>' alt='' />
+							      </a>
+							      <?php the_sub_field('description'); ?>
+							      <a href='<?php the_sub_field('site_url'); ?>' target='_blank' class='button site-link'>
+							      	View Live Site
+							      </a>
+							    </div>
+  							</div>
+							
 						</div>
+						<?php $index++; ?>
 					<?php endwhile; ?>
 				</div>
 			<?php endif; ?>

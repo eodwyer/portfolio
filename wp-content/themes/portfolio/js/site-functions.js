@@ -6,6 +6,11 @@
 		// initialise
 		headroom.init(); 
 
+
+		/*----------------------------------------------
+		# Sticky Header
+		-----------------------------------------------*/
+
 		var topofDiv = $("#masthead").offset().top; //gets offset of header
 		var height = $("#masthead").outerHeight();
 
@@ -24,6 +29,11 @@
 			    });
 		    }
 		});
+
+		$('#masthead').append('<div id="menu-overlay"></div>');
+		$('#menu-overlay').on('click',function(){
+			$('#site-navigation').removeClass('toggled');
+		});	
 
 
 		/*----------------------------------------------
@@ -50,6 +60,30 @@
 		$('.section-toggle').on('click',function(){
 			$(this).toggleClass('active');
 		});
+
+
+		/*-------------------------------------------------
+		# Modal
+		--------------------------------------------------*/
+
+		$(function() {
+		  $(".modal-switch").on("change", function() {
+		    if ($(this).is(":checked")) {
+		      $("body").addClass("modal-open");
+		    } else {
+		      $("body").removeClass("modal-open");
+		    }
+		  });
+
+		  $(".modal-fade-screen, .modal-close").on("click", function() {
+		    $(".modal-state:checked").prop("checked", false).change();
+		  });
+
+		  $(".modal-inner").on("click", function(e) {
+		    e.stopPropagation();
+		  });
+		});
+
 
 	});
 })( jQuery );
