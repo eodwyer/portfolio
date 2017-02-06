@@ -11,7 +11,13 @@ wp-content/*
 # ignore specific themes
 wp-content/themes/twenty*/
 
+#ignore non-custom plugins
+wp-content/plugins/*
+!wp-content/plugins/menu-icons
+
+
 #gulp stuff
 node_modules/
 .DS_Store
 dist
+.htaccess
