@@ -28,10 +28,21 @@
 			       'paddingTop':'0px'
 			    });
 		    }
+
+
+		    if($('.header-fixed').length==0){
+		    	$('#header .img-clip').addClass('hid');
+		    }else{
+		    	setTimeout(function(){
+		    		$('#header .img-clip').removeClass('hid');
+		    	},1150);
+		    	
+		    }
 		});
 
 		$('#masthead').append('<div id="menu-overlay"></div>');
 		$('#menu-overlay').on('click',function(){
+			$('#primary-menu, .menu-toggle').attr('aria-expanded', false);
 			$('#site-navigation').removeClass('toggled');
 		});	
 
@@ -41,17 +52,16 @@
 		-----------------------------------------------*/
 		$('.site-header').addClass('darken');
 
-		$('#home-navigation a').on('click',function(e){
-			e.preventDefault();
+		$('#home-navigation a').on('click', function(e){
 			var theURL=$(this).attr('href');
 			$('.img-clip').toggleClass('spin');
-			//$(this).toggleClass('selected');
 			$('body').addClass('home-animate');
 
 			var theDirect=setTimeout(function(){
 				window.location.href = theURL;
 			},1000);
-		})
+		});
+
 
 		/*----------------------------------------------
 		# Blog
@@ -82,7 +92,10 @@
 		  $(".modal-inner").on("click", function(e) {
 		    e.stopPropagation();
 		  });
+		
 		});
+
+	
 
 
 	});

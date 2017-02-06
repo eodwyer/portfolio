@@ -16,7 +16,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class='section-inner'>
 			<div class="site-info">
-				&copy <?php the_date('Y'); ?> Eoin O'Dwyer |
+				&copy <?php the_date('Y'); ?> Eoin O'Dwyer
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'portfolio' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'portfolio' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
 				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'portfolio' ), 'Portfolio', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>

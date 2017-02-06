@@ -38,7 +38,7 @@ get_header(); ?>
 								</div>
 							</label>
 							
-							<input class="modal-state modal-switch" id="modal-<?php echo $index; ?>" type="checkbox" />
+							<input class="modal-state modal-switch" name='portfolio' id="modal-<?php echo $index; ?>" type="checkbox" />
 							<div class="modal-fade-screen">
 							    <div class="modal-inner">
 							      <div class="modal-close" for="modal-1"></div>

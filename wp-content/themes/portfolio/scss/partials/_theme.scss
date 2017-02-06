@@ -3,9 +3,14 @@ Theme Stylings
 ******************************/
 
 body{
-	background:url(../img/bg-main.jpg) top center no-repeat;
-	background-size:cover;
+	background:#000 url(../img/bg-main.jpg) top center no-repeat;
+	background-size:auto 100vh;
 	background-attachment: fixed;
+	min-height: 100%;
+	@include media($mobile){
+		background-size:cover;
+		
+	}
 }
 
 .site{
@@ -139,11 +144,10 @@ body{
 	    clip: rect(10px,110px,125px,10px);
 	    transition:all .5s;
 	}
-}
 
-.header-fixed .img-clip{
-	opacity: 0;
-	transition:opacity 5s;
+	&.hid{
+		visibility: hidden;
+	}
 }
 
 /*-------------------------------------
@@ -175,7 +179,6 @@ body{
 	border-radius: 50%;
 	box-shadow: none;
 	transition:left .75s, top .75s, visibility .75s;
-	//transition:all 1s;
 	@include media($mobileDown){
 		left:50%;
 		margin-left:-50px;
@@ -198,6 +201,8 @@ body{
 
 	&[aria-expanded="true"]{
 		
+		position: fixed;
+
 		@include media($mobileDown){
 			opacity: 1 !important;
 			left:50% !important;
@@ -226,7 +231,7 @@ body{
 	.menu-toggle{
     	opacity: 0;
     }
-	}
+}
 
 
 
@@ -264,6 +269,8 @@ body{
 
 	&[aria-expanded=true]{
 		display: block;
+		
+		height: 100vh;
 	}
 
 	li{
@@ -290,7 +297,7 @@ body{
 	a{
 		display: block;
 		line-height: 1em;
-		padding:20px 0;
+		padding:18px 0;
 		text-align: center;
 		transition:all .5s;
 		font-size:1rem;
@@ -303,6 +310,17 @@ body{
 			border-left:1px solid #333;
 		}
 
+		svg{
+			display: inline-block;
+			width:20px;
+			height:20px;
+			vertical-align: middle;
+			fill:$red;
+			margin-right: 10px;
+	    	position: relative;
+	    	top:-1px;
+	    	transition:all .5s;
+		}
 
 		span{
 			display: inline-block;
@@ -315,26 +333,17 @@ body{
 
 			svg{
 				fill:#000;
+				top:-2px;
 			}
 		}
 	}
 
-	svg{
-		display: inline-block;
-		width:20px;
-		height:20px;
-		vertical-align: middle;
-		fill:$red;
-		margin-right: 10px;
-    	margin-top: -4px;
-    	transition:all .5s;
-	}
+	
 }
 
 /*-----------------------------------------
 #Sticky Menu
 ---------------------------------------*/
-
 @include media($mobile){
 	.site-header.header-fixed{
 	
@@ -343,7 +352,6 @@ body{
 	    left: 0;
 	    padding:0;
 	    background: none;
-
 
 		.menu-toggle{
 			opacity: 1;
@@ -392,19 +400,22 @@ body{
 
 	    	&.toggled{
 	    		width:50vw;
-	    		& + #menu-overlay{
-			    	background: rgba(0,0,0,.85);
-			    	position: fixed;
-			    	top:0;
-			    	left:0;
-			    	width:100%;
-			    	height: 100%;
-			    	z-index: -1;
-			    }
 	    	}
 
 	    }
 	}
+}
+
+.toggled{
+	& + #menu-overlay{
+    	background: rgba(0,0,0,.85);
+    	position: fixed;
+    	top:0;
+    	left:0;
+    	width:100%;
+    	height: 100%;
+    	z-index: -1;
+    }
 }
 
 
@@ -416,7 +427,7 @@ body{
 		.menu-toggle{
 			position: fixed;
 			left:-30px;
-			top:8px;
+			top:25px;
 			margin-left:0;
 		}
 
@@ -440,6 +451,7 @@ body{
 
 .site-content{
 	background:#fff;
+
 }
 
 .content-area{
@@ -477,11 +489,12 @@ body{
 	}
 
 	h3{
-		float:left;
 		margin-top:0;
 		padding-right:20px;
-		@include media($mobileDown){
-			margin-bottom: 0;
+		margin-bottom: 0;
+		@include media($mobile){
+			margin-bottom: 1em;
+			float:left;
 		}
 	}
 
@@ -502,7 +515,28 @@ body{
 
 	.res-block-content{
 		ul{
-			column-count: 3;
+			padding-left:.75em; 
+			@include media($mobile){
+				column-count: 3;
+			}
+
+			li{
+				list-style: none;
+				position: relative;
+				padding-left:20px;
+				&:before{
+					content:'';
+					width:6px;
+					height: 6px;
+					background: #000;
+					border-radius: 50%;
+					display: block;
+					position: absolute;
+					left:0;
+					top:12px;
+				}
+			}
+			
 		}
 	}
     

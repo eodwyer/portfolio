@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Menu Icons
+Plugin Name: SVG Icons
 Plugin URI: Local Host
 Description: Adds icon fields to menu items
 Version: 1.0
@@ -107,7 +107,7 @@ class Icon_Walker extends Walker_Nav_Menu {
 
         // add svg icons here
          $themeDir = get_template_directory_uri();
-         $theIcon = sprintf( '<svg class="icon icon-home"><use xlink:href="'.plugins_url( 'fonts/symbol-defs.svg', __FILE__ ).'#'.esc_attr( $item->menuIcon ).'"></use></svg>');
+         $theIcon = sprintf( '<svg class="icon icon-home" aria-labelledby="desc"><desc>Decorative Icon</desc></title><use xlink:href="'.plugins_url( 'fonts/symbol-defs.svg', __FILE__ ).'#'.esc_attr( $item->menuIcon ).'"></use></svg>');
         
 
         $atts = array();
