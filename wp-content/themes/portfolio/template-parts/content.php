@@ -25,13 +25,13 @@
 			<div class="entry-meta">
 				<?php portfolio_posted_on(); ?>
 			</div><!-- .entry-meta -->
-			<?php
+			<!--<?php
 				if ( has_post_thumbnail() ) {
 					the_post_thumbnail();
 				} 
 
 				endif; 
-			?>
+			?>-->
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
