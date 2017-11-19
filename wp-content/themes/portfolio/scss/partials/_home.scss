@@ -13,17 +13,19 @@
 	    max-width: 280px;
 	    max-height: 280px;
 	    padding: 55px 40px;
-	    margin: 20px auto 45px auto;
+	    margin: 0px auto 45px auto;
 	    display: flex;
   		align-items: center;
   		justify-content: center;
 	    text-align: center;
 	    background:rgba(0,0,0,.1);
 	    transition:all 2s;
+		position: relative;
+	    top:20px;
 
 	    @include media($mobile){
-	    	position: relative;
-	   		top: 0;
+	    	
+	   		top: 20px;
 	   		left: 15%;
 	    }
 
