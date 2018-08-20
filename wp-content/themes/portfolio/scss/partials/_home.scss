@@ -42,10 +42,12 @@
 	}
 
 	#content{
-		padding-top:0 !important;
-		
+		padding:0 !important;
+		background:transparent;
+
 		.section-inner{
 			max-width: none;
+			background:#fff;
 		}
 	}
 
@@ -100,9 +102,7 @@
 	---------------------------------------*/
 
 
-	#home-navigation{
-		margin-left:-$sidePad;
-		margin-right:-$sidePad; 
+	#home-navigation{ 
 		margin-bottom: 25px;
 		background: #000;
 		@include media($mobileDown){
