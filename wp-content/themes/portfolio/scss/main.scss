@@ -1,11 +1,6 @@
-@import 'bourbon/bourbon';
-@import "neat/neat";
-
 @import 'functions/variables';
 @import 'functions/mixins';
 @import 'base/base';
-@import 'partials/theme.scss';
-@import 'partials/home.scss';
-@import 'partials/blog.scss'; 
-@import 'partials/portfolio.scss';
-
+@import 'partials/partials.scss';
+@import 'pages/content_page.scss'; 
+@import 'pages/home.scss';

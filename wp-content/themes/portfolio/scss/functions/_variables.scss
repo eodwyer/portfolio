@@ -2,14 +2,10 @@
 # Colors
 --------------------------------------------------------------*/
 //http://paletton.com/palette.php?uid=10G0u0ka%2BkQ4AuB7Spbdkgajfdj
-
-
 $red: #A68D6D;//#D46A6A;
-$darkPrime: darken( $red, 20% );
+$darkred: darken( $red, 30% );
 $menucolor:#000;
 $headerColor:#404040;
-
-
 
 /*--------------------------------------------------------------
 # Fonts
@@ -18,6 +14,7 @@ $headerColor:#404040;
 $headerFont:'Telex', sans-serif; 
 $bodyFont:'Georgia', serif;
 
+$boxshadow: 10px 10px 11px -8px rgba(0,0,0,0.75);
 
 /*--------------------------------------------------------------
 # Layout
@@ -25,26 +22,8 @@ $bodyFont:'Georgia', serif;
 $max-width: 1200px;
 $sidePad:25px;
 
-
 $smallScreen: 640px;
 $mediumScreen: 768px;
 $largeScreen: 960px;
 $ex-largeScreen: 1200px;
 $fullWidth: 1600px;
-
-$mobile: new-breakpoint(min-width $smallScreen);
-$mobileDown:new-breakpoint(max-width $smallScreen);
-
-$tablet: new-breakpoint(min-width $mediumScreen);
-$tabletDown:new-breakpoint(max-width $mediumScreen);
-
-$desktop: new-breakpoint(min-width $largeScreen);
-$desktopDown:new-breakpoint(max-width $largeScreen);
-
-$ex-desktop: new-breakpoint(min-width $ex-largeScreen);
-$ex-desktopDown:new-breakpoint(max-width $ex-largeScreen);
-
-
-
-
-

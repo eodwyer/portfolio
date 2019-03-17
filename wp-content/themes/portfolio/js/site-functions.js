@@ -48,13 +48,11 @@
 			$('#site-navigation').removeClass('toggled');
 		});	
 
-
 		/*----------------------------------------------
 		# Homepage
 		-----------------------------------------------*/
-		$('.site-header').addClass('darken');
-
 		$('#home-navigation a').on('click', function(e){
+      e.preventDefault();
 			var theURL=$(this).attr('href');
 			$('.img-clip').toggleClass('spin');
 			$('body').addClass('home-animate');
@@ -72,7 +70,6 @@
 		$('.section-toggle').on('click',function(){
 			$(this).toggleClass('active');
 		});
-
 
 		/*-------------------------------------------------
 		# Modal
@@ -94,12 +91,7 @@
 		  $(".modal-inner").on("click", function(e) {
 		    e.stopPropagation();
 		  });
-		
 		});
-
-
-
-
 	});
 })( jQuery );
 

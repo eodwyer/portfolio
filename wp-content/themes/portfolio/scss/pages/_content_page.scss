@@ -1,0 +1,27 @@
+/*-------------------------------------
+# Content Page
+---------------------------------------*/
+
+.site-content{
+  background:#fff;
+  flex:1;
+}
+
+.content-area{
+  padding:25px 0;
+  @include bp("mobile"){
+    
+  }
+  .site-main{
+    max-width: 800px;
+    margin:0 auto;
+    
+    @include bp("mobile-down"){
+      padding:0;
+    }
+  }
+
+  h1{
+    text-align: center;
+  }
+}

@@ -2,11 +2,15 @@
 /*
 !wp-content/
 !.gitignore
+.jscsrc
+.jshintignore
 
 #wp content stuff
 wp-content/*
 !wp-content/themes/
 !wp-content/plugins/
+wp-content/themes/resttest/
+wp-content/themes/syntax/
 
 # ignore specific themes
 wp-content/themes/twenty*/
@@ -21,3 +25,4 @@ node_modules/
 .DS_Store
 dist
 .htaccess
+wp-content/themes/portfolio/scss/.DS_Store

@@ -6,11 +6,11 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: Georgia, serif;
-	font-size: 18px;
-	font-size: 1.125rem;
-	line-height: 1.5;
+  color: #404040;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.5;
 }
 
 h1, 
@@ -22,137 +22,123 @@ h3,
 h4,
 h5,
 h6 {
-	clear: both;
-	font-family: 'Telex', sans-serif; 
+  clear: both;
+  font-family: 'Telex', sans-serif; 
 }
 
 h1,.h1{
-	font-size:35px;
-	margin-top:0;
+  font-size: 2rem;
+  margin-top:0;
+  @include bp("tablet") {
+    font-size: 2.1875rem
+  }
 }
 
 p {
-	margin-bottom: 1.5em;
-}
-
-a{
-	color:#000;
-
-	&:visited{
-		color:inherit;
-		opacity:.8;
-	}
+  margin-bottom: 1.5em;
 }
 
 ul, ol{
-	padding-left:1.5em;
+  padding-left:1.5em;
 }
 
 dfn,
 cite,
 em,
 i {
-	font-style: italic;
+  font-style: italic;
 }
 
 blockquote {
-	margin: 0 1.5em;
+  margin: 0 1.5em;
 }
 
 address {
-	margin: 0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
 pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
 }
 
 code,
 kbd,
 tt,
 var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
+  border-bottom: 1px dotted #666;
+  cursor: help;
 }
 
 mark,
 ins {
-	background: #fff9c0;
-	text-decoration: none;
+  background: #fff9c0;
+  text-decoration: none;
 }
 
 big {
-	font-size: 125%;
+  font-size: 125%;
 }
 
 
 a{
-	
-	&:link{
-		color:$red;
-		text-decoration:none;
-	}
+  
+  &:link{
+    color:$darkred;
+  }
 
-	&:hover{
-		text-decoration:underline;
-	}
-	
-	&:visited,
-	&:active{
-		color:$red;
-		opacity:.5;
-		text-decoration:none;
-	}
-
-	
+  &:hover{
+    text-decoration: none;
+  }
+  
+  &:visited,
+  &:active{
+    color:$red;
+    opacity:.5;
+    text-decoration:none;
+  }  
 }
 
 
 /*-------------------------------------
 # Buttons
 --------------------------------------*/
-
-
 .site-main{
-	.button,
-	button, 
-	input[type=button], 
-	input[type=reset], 
-	input[type=submit],
-	 div.wpforms-container-full .wpforms-form button[type=submit]{
-		background: $red;
-		color:#fff;
-		font-weight: normal;
-		line-height: 20px;
-	    //border: 2px solid $darkPrime;
-	    border:none;
-	    text-decoration: none;
-	    text-shadow: none;
-	    box-shadow: none;
-	    padding:15px 20px;
-	    transition:all .25s;
+  .button,
+  button, 
+  input[type=button], 
+  input[type=reset], 
+  input[type=submit],
+   div.wpforms-container-full .wpforms-form button[type=submit]{
+    background: $red;
+    color:#fff;
+    font-weight: normal;
+    line-height: 20px;
+    border:none;
+    text-decoration: none;
+    text-shadow: none;
+    box-shadow: none;
+    padding:15px 20px;
+    transition:all .25s;
 
-	    &:hover{
-	    	background:$darkPrime;
-	    	box-shadow:none;
+    &:hover{
+      background:$darkred;
+      box-shadow:none;
 
-	    }
-	}
+    }
+  }
 }
-
-

@@ -1,0 +1,36 @@
+.site{
+  background-color:#000;
+  background-size:cover;
+  background-attachment: fixed;
+  background-position: top center;
+
+  /* sticky footer*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  @include bp("mobile"){
+    background-size:cover;
+  }
+
+  &.site-enhanced{
+    background-image: url(../img/bg-main.jpg);
+    animation: sharpen .5s both;
+  } 
+}
+
+.section-inner{
+  max-width: 1200px;
+  margin:0 auto;
+}
+
+.site-header,
+.site-content{
+  padding-left: $sidePad;
+  padding-right: $sidePad;
+}
+
+.entry-content {
+  max-width: 640px;
+  margin: 0 auto;
+}

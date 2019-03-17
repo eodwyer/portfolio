@@ -39,10 +39,11 @@ get_header(); ?>
 							</label>
 							
 							<input class="modal-state modal-switch" name='portfolio' id="modal-<?php echo $index; ?>" type="checkbox" />
-							<div class="modal-fade-screen">
-							    <div class="modal-inner">
-							      <div class="modal-close" for="modal-1"></div>
-							      <h2><?php the_sub_field('title'); ?></h2>
+							<div class="portfolio-modal modal-fade-screen">
+						    <div class="modal-inner">
+						      <div class="modal-close" for="modal-1"></div>
+						      <h2><?php the_sub_field('title'); ?></h2>
+						      <div class="portfolio-modal__content">
 							      <a href='<?php the_sub_field('site_url'); ?>' target='_blank'>
 							      	<img src='<?php echo $img['sizes']['large']; ?>' alt='' />
 							      </a>
@@ -51,7 +52,8 @@ get_header(); ?>
 							      	View Live Site
 							      </a>
 							    </div>
-  							</div>
+						    </div>
+							</div>
 							
 						</div>
 						<?php $index++; ?>

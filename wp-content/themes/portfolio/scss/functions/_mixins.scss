@@ -1,4 +1,31 @@
-@mixin omega-reset($nth) {
-  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
-  &:nth-child(#{$nth}+1) { clear: none }
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+@mixin bp($point) {
+  @if $point == "mobile" {
+    @media (min-width: 641px) { @content; }
+  }
+  @if $point == "mobile-down" {
+    @media (max-width: 640px) { @content; }
+  }
+  @else if $point == "tablet" {
+    @media (min-width: 769px) { @content; }
+  }
+  @else if $point == "tablet-down" {
+    @media (max-width: 768px) { @content; }
+  }
+  @else if $point == "desktop" {
+    @media (min-width: 961px)  { @content; }
+  }
+  @else if $point == "desktop-down" {
+    @media (max-width: 960px)  { @content; }
+  }
+  @else if $point == "ex-desktop" {
+    @media (min-width: 96px)  { @content; }
+  }
 }

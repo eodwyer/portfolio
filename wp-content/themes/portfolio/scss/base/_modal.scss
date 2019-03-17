@@ -36,7 +36,11 @@
   }
 
   .modal-fade-screen { // overlay
-    @include position(fixed, 0);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background-color: rgba(#000, 0.85);
     opacity: 0;
     padding-top: 0.6em;
@@ -45,26 +49,36 @@
     visibility: hidden;
     z-index: 99999999999;
 
-    @include media($large-screen) {
+    @include bp("desktop"){
       padding-top: 5em;
     }
 
     .modal-bg {
-      @include position(absolute, 0);
+      position: absolute;
+      top: 0;
+      left: 0;
       cursor: pointer;
     }
   }
 
   .modal-close {
-    @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
-    @include size(1.5em);
+    position: absolute;
+    top: $modal-padding/2;
+    right: $modal-padding/2;
+    width: 1.5em;
+    height: 1.5em;
     background: $modal-background;
     cursor: pointer;
 
     &::after,
     &::before {
-      @include position(absolute, 3px 3px 0 50%);
-      @include size(0.15em 1.5em);
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      bottom: 0;
+      left: 50%;
+      height: 1.5em;
+      width: .15em;
       background: $modal-close-color;
       content: "";
       display: block;
@@ -95,12 +109,11 @@
     width: 95%;
     max-width: 800px;
 
-    @include media($medium-screen) {
-      padding: $modal-padding;
+    @include bp("tablet") {
       width: 60%;
     }
 
-    @include media($large-screen) {
+    @include bp("desktop") {
       width: 90%;
     }
 
@@ -122,7 +135,7 @@
     .modal-content {
       color: $base-font-color;
 
-      @include media($medium-screen) {
+      @include bp("tablet") {
         columns: 2 8em;
       }
     }
